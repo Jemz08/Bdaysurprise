@@ -1023,3 +1023,60 @@ body {
     color: white;
     z-index: 10000000000000000;
 }
+/* === Glowing Background === */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #ff4b2b, #ff416c, #ff6a00, #ff1493);
+    background-size: 600% 600%;
+    animation: glowBackground 15s ease infinite;
+}
+
+/* Background glowing animation */
+@keyframes glowBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === Big Heart in Middle === */
+.heart {
+    position: relative;
+    width: 200px;
+    height: 180px;
+    background: #ff1e56;
+    transform: rotate(-45deg);
+    animation: heartbeat 1.5s infinite;
+    box-shadow: 0 0 50px rgba(255, 0, 85, 0.8);
+}
+
+/* Heart shape using pseudo-elements */
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #ff1e56;
+    box-shadow: 0 0 50px rgba(255, 0, 85, 0.8);
+}
+
+.heart::before {
+    top: -100px;
+    left: 0;
+}
+
+.heart::after {
+    left: 100px;
+    top: 0;
+}
+
+/* Heartbeat animation */
+@keyframes heartbeat {
+    0%, 20%, 40%, 60%, 80%, 100% { transform: scale(1) rotate(-45deg); }
+    10%, 30%, 50%, 70%, 90% { transform: scale(1.1) rotate(-45deg); }
+}
