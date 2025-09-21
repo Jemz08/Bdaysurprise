@@ -1023,4 +1023,19 @@ body {
     color: white;
     z-index: 10000000000000000;
 }
+/* === Glowing Background (slow & smooth) === */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(270deg, #ff4b2b, #ff416c, #ff6a00, #ff1493);
+    background-size: 600% 600%;
+    animation: glowBackground 40s ease infinite; /* slower animation */
+}
+
+/* Background glowing animation */
+@keyframes glowBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
